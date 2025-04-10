@@ -24,10 +24,19 @@ repositories {
 }
 
 dependencies {
+	// Spring Boot starters
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	// PostgreSQL database driver
+	runtimeOnly 'org.postgresql:postgresql'
+
+	// Lombok
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+
+	// Test dependencies
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
@@ -36,7 +45,6 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
-// ✅ Ensure bootJar is enabled and configured
 tasks.named('bootJar') {
 	archiveFileName = 'book-service.jar'
 }
