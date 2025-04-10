@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: book-service
+
+server:
+  port: 1000
+  servlet:
+    context-path: /book-service
