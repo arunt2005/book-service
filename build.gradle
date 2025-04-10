@@ -35,3 +35,8 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+// ✅ Ensure bootJar is enabled and configured
+tasks.named('bootJar') {
+	archiveFileName = 'book-service.jar'
+}
